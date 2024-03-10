@@ -1,0 +1,31 @@
+drop
+
+ https://www.dropbox.com/ and create an account. 
+ Continue with 2 GB Dropbox Basic plan 
+ https://www.dropbox.com/lp/developers
+
+to https://colab.research.google.com/
+
+ to https://www.wisdomaxis.com/technology/software/data/for-reports/
+
+o https://about.appsheet.com/, sign in with google
+
+import dropbox
+
+dropbox_access_token = ''
+
+dropbox_path = "/content/pract5.txt"
+computer_path = r"\Users\jshri\Desktop\aaa.txt"  # Using raw string literal (prefixing with r)
+
+# Initialize Dropbox client
+client = dropbox.Dropbox(dropbox_access_token)
+
+# Print success message after linking Dropbox account
+print("[SUCCESS] Dropbox account linked")
+
+# Upload file to Dropbox
+with open(computer_path, "rb") as f:
+    client.files_upload(f.read(), dropbox_path)
+
+# Print uploaded file path
+print("[UPLOADED] {}".format(computer_path))
